@@ -39,13 +39,14 @@
             this.datausuario = new System.Windows.Forms.DataGridView();
             this.btneditar = new System.Windows.Forms.Button();
             this.btnexcluir = new System.Windows.Forms.Button();
+            this.btnListarusuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datausuario)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(13, 145);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(69, 34);
             this.btnCadastrar.TabIndex = 0;
@@ -66,7 +67,7 @@
             // txtnome
             // 
             this.txtnome.Location = new System.Drawing.Point(99, 55);
-            this.txtnome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnome.Margin = new System.Windows.Forms.Padding(2);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(127, 20);
             this.txtnome.TabIndex = 2;
@@ -75,7 +76,7 @@
             // btnConectar
             // 
             this.btnConectar.Location = new System.Drawing.Point(99, 145);
-            this.btnConectar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConectar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(76, 34);
             this.btnConectar.TabIndex = 3;
@@ -106,7 +107,7 @@
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(99, 90);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(127, 20);
             this.txtSenha.TabIndex = 6;
@@ -114,7 +115,7 @@
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(99, 23);
-            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(40, 20);
             this.txtId.TabIndex = 7;
@@ -137,10 +138,11 @@
             this.btneditar.TabIndex = 9;
             this.btneditar.Text = "Editar";
             this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // btnexcluir
             // 
-            this.btnexcluir.Location = new System.Drawing.Point(99, 217);
+            this.btnexcluir.Location = new System.Drawing.Point(13, 202);
             this.btnexcluir.Name = "btnexcluir";
             this.btnexcluir.Size = new System.Drawing.Size(75, 37);
             this.btnexcluir.TabIndex = 10;
@@ -149,12 +151,23 @@
             this.btnexcluir.UseVisualStyleBackColor = true;
             this.btnexcluir.Click += new System.EventHandler(this.btnexcluir_Click);
             // 
+            // btnListarusuario
+            // 
+            this.btnListarusuario.Location = new System.Drawing.Point(100, 202);
+            this.btnListarusuario.Name = "btnListarusuario";
+            this.btnListarusuario.Size = new System.Drawing.Size(126, 37);
+            this.btnListarusuario.TabIndex = 11;
+            this.btnListarusuario.Text = "ListarUsuario";
+            this.btnListarusuario.UseVisualStyleBackColor = true;
+            this.btnListarusuario.Click += new System.EventHandler(this.btnListarusuario_Click);
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnListarusuario);
             this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.btneditar);
             this.Controls.Add(this.datausuario);
@@ -168,7 +181,7 @@
             this.Controls.Add(this.btnCadastrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCliente";
@@ -193,6 +206,7 @@
         private System.Windows.Forms.DataGridView datausuario;
         private System.Windows.Forms.Button btneditar;
         internal System.Windows.Forms.Button btnexcluir;
+        private System.Windows.Forms.Button btnListarusuario;
     }
 }
 

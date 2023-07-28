@@ -6,6 +6,7 @@ namespace testando
 {
     public partial class FrmCliente : Form
     {
+        int codigo;
         public FrmCliente()
         {
             InitializeComponent();
@@ -60,14 +61,49 @@ namespace testando
 
         private void datausuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {//convertendo a 1 celula em inteiro
-            int codigo = Convert.ToInt32(datausuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+            codigo = Convert.ToInt32(datausuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
             //convert o inteiro para string
-            MessageBox.Show("usuário selecopnado : " + codigo.ToString());
+            MessageBox.Show("usuário selecionado : " + codigo.ToString());
+            txtnome.Text = datausuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            txtSenha.Text = datausuario.Rows[e.RowIndex].Cells["Senha"].Value.ToString();
         }
 
         private void btnexcluir_Click(object sender, EventArgs e)
         {
+            UsuarioController uscontroller = new UsuarioController();
+            //chamo o metodo excluir do ususraio controller se verdade
+            if(uscontroller.Excluir(codigo)==true)
+            {//excluir o usuario
+                MessageBox.Show("codigo do usuário " + codigo + " excluido com sucesso");
+            }
+            else
+            {//falso erro ao excluir
+                MessageBox.Show("Erro ao excluir o usuário");
+            }
+        }
 
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            //instancio o objeto usuario controle
+            UsuarioController usController = new UsuarioController();  
+            UsuarioModelo usmodelo = new UsuarioModelo();
+            usmodelo.nome= txtnome.Text;
+            usmodelo.senha = txtSenha.Text;
+            usmodelo.idusuario = codigo;
+            if( usController.editar(usmodelo)==true)
+            {
+                MessageBox.Show("Usuario atualizado com sucesso");
+            }
+            else
+            {
+                MessageBox.Show("Erro ao atualizar usuário");
+            }
+        }
+
+        private void btnListarusuario_Click(object sender, EventArgs e)
+        {
+            frmListarUsuario frmListar = new frmListarUsuario();
+            frmListar.ShowDialog();//mostro o formulário listar
         }
     }
 }

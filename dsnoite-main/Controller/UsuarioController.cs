@@ -50,7 +50,7 @@ namespace Controller
         {
             bool resultado=false;
             MySqlConnection sqlcon = con.getConexao();
-            string sql = "delete from usuario where id=" + codigo;
+            string sql = "delete from usuario where idusuario=" + codigo;
             sqlcon.Open();
             MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
             mySqlCommand.CommandType=System.Data.CommandType.Text;
@@ -59,6 +59,24 @@ namespace Controller
             {
                 resultado = true;
             }
+            return resultado;
+        }
+        public bool editar(UsuarioModelo us)
+        {
+            bool resultado = false;
+            string sql = "update usuario set nome=@nome, senha=@senha where idusuario=@id";
+            MySqlConnection sqlcon=con.getConexao();
+            sqlcon.Open();
+            MySqlCommand command = new MySqlCommand(sql, sqlcon);
+            command.CommandType=System.Data.CommandType.Text;
+            command.CommandText=sql;
+            //substituindo a variavel @... pelo conteudo do objeto
+            command.Parameters.AddWithValue("@nome", us.nome);
+            command.Parameters.AddWithValue("@senha", us.senha);
+            command.Parameters.AddWithValue("@id", us.idusuario);
+            if( command.ExecuteNonQuery() >= 1 )
+                resultado = true;
+            sqlcon.Close();
             return resultado;
         }
     }

@@ -154,3 +154,4 @@ C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.c
 C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.exe
 C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.pdb
 C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.frmPrincipal.resources
+C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.frmListarUsuario.resources

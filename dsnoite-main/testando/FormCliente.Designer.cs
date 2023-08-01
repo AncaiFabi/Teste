@@ -40,6 +40,8 @@
             this.btneditar = new System.Windows.Forms.Button();
             this.btnexcluir = new System.Windows.Forms.Button();
             this.btnListarusuario = new System.Windows.Forms.Button();
+            this.cboPerfil = new System.Windows.Forms.ComboBox();
+            this.lblperfil = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datausuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,12 +163,33 @@
             this.btnListarusuario.UseVisualStyleBackColor = true;
             this.btnListarusuario.Click += new System.EventHandler(this.btnListarusuario_Click);
             // 
+            // cboPerfil
+            // 
+            this.cboPerfil.FormattingEnabled = true;
+            this.cboPerfil.Location = new System.Drawing.Point(99, 119);
+            this.cboPerfil.Name = "cboPerfil";
+            this.cboPerfil.Size = new System.Drawing.Size(121, 21);
+            this.cboPerfil.TabIndex = 12;
+            this.cboPerfil.SelectedIndexChanged += new System.EventHandler(this.cboPerfil_SelectedIndexChanged);
+            // 
+            // lblperfil
+            // 
+            this.lblperfil.AutoSize = true;
+            this.lblperfil.Location = new System.Drawing.Point(44, 119);
+            this.lblperfil.Name = "lblperfil";
+            this.lblperfil.Size = new System.Drawing.Size(30, 13);
+            this.lblperfil.TabIndex = 13;
+            this.lblperfil.Text = "Perfil";
+            this.lblperfil.Click += new System.EventHandler(this.label4_Click);
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.lblperfil);
+            this.Controls.Add(this.cboPerfil);
             this.Controls.Add(this.btnListarusuario);
             this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.btneditar);
@@ -207,6 +230,8 @@
         private System.Windows.Forms.Button btneditar;
         internal System.Windows.Forms.Button btnexcluir;
         private System.Windows.Forms.Button btnListarusuario;
+        private System.Windows.Forms.ComboBox cboPerfil;
+        private System.Windows.Forms.Label lblperfil;
     }
 }
 

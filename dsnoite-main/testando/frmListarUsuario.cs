@@ -16,5 +16,10 @@ namespace testando
         {
             InitializeComponent();
         }
+
+        private void frmListarUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

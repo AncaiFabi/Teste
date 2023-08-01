@@ -2,11 +2,14 @@
 using System.Windows.Forms;
 using Modelo;
 using Controller;
+using System.Data;
+
 namespace testando
 {
     public partial class FrmCliente : Form
     {
         int codigo;
+        int idperfil;
         public FrmCliente()
         {
             InitializeComponent();
@@ -19,6 +22,7 @@ namespace testando
             //populo os atributos do modelo
             usmodelo.nome=txtnome.Text;
             usmodelo.senha=txtSenha.Text;
+            usmodelo.idperfil = idperfil;
             UsuarioController uscontrole=new UsuarioController();
            if(uscontrole.cadastrar(usmodelo) == true)
             {
@@ -35,8 +39,12 @@ namespace testando
         {
             //instaciar meu controleusuario
             UsuarioController usControle=new UsuarioController();
-            datausuario.DataSource = usControle.ObterDados("select * from usuario");
+            datausuario.DataSource = usControle.ObterDados("SELECT usuario.usuario,usuario.nome,perfil_usuario.perfil_usuario FROM usuario INNER JOIN perfil_usuario on usuario.id_perfil=perfil_usuario.id_perfil;");
             //MessageBox.Show("Seja bem vindo(a)");
+            cboPerfil.DataSource = usControle.ObterDados("select * from perfil_usuario");
+            cboPerfil.DisplayMember = "nome_perfil";
+            cboPerfil.ValueMember = "id_perfil";
+ 
         }
 
         private void btnConectar_Click(object sender, EventArgs e)
@@ -104,6 +112,18 @@ namespace testando
         {
             frmListarUsuario frmListar = new frmListarUsuario();
             frmListar.ShowDialog();//mostro o formulário listar
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //variavel convert para inteiro
+            idperfil = Convert.ToInt32(((DataRowView)cboPerfil.SelectedItem)["id_perfil"]);
+            MessageBox.Show("id= " + idperfil);
         }
     }
 }

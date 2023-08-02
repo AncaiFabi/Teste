@@ -39,7 +39,7 @@ namespace testando
         {
             //instaciar meu controleusuario
             UsuarioController usControle=new UsuarioController();
-            datausuario.DataSource = usControle.ObterDados("SELECT usuario.usuario,usuario.nome,perfil_usuario.perfil_usuario FROM usuario INNER JOIN perfil_usuario on usuario.id_perfil=perfil_usuario.id_perfil;");
+            datausuario.DataSource = usControle.ObterDados("SELECT * from usuario");
             //MessageBox.Show("Seja bem vindo(a)");
             cboPerfil.DataSource = usControle.ObterDados("select * from perfil_usuario");
             cboPerfil.DisplayMember = "nome_perfil";
@@ -74,6 +74,7 @@ namespace testando
             MessageBox.Show("usuário selecionado : " + codigo.ToString());
             txtnome.Text = datausuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
             txtSenha.Text = datausuario.Rows[e.RowIndex].Cells["Senha"].Value.ToString();
+            cboPerfil.Text = datausuario.Rows[e.RowIndex].Cells["id_perfil"].Value.ToString();
         }
 
         private void btnexcluir_Click(object sender, EventArgs e)

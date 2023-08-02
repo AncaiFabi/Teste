@@ -155,3 +155,4 @@ C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.e
 C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.pdb
 C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.frmPrincipal.resources
 C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.frmListarUsuario.resources
+C:\Users\aluno\Documents\GitHub\Teste\dsnoite-main\testando\obj\Debug\testando.FormLogin.resources

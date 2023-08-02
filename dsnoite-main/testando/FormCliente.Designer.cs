@@ -59,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 55);
+            this.label1.Location = new System.Drawing.Point(46, 76);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
@@ -68,7 +68,7 @@
             // 
             // txtnome
             // 
-            this.txtnome.Location = new System.Drawing.Point(99, 55);
+            this.txtnome.Location = new System.Drawing.Point(99, 73);
             this.txtnome.Margin = new System.Windows.Forms.Padding(2);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(127, 20);
@@ -77,10 +77,10 @@
             // 
             // btnConectar
             // 
-            this.btnConectar.Location = new System.Drawing.Point(99, 145);
+            this.btnConectar.Location = new System.Drawing.Point(422, 259);
             this.btnConectar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConectar.Name = "btnConectar";
-            this.btnConectar.Size = new System.Drawing.Size(76, 34);
+            this.btnConectar.Size = new System.Drawing.Size(136, 70);
             this.btnConectar.TabIndex = 3;
             this.btnConectar.Text = "conectar";
             this.btnConectar.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 93);
+            this.label3.Location = new System.Drawing.Point(339, 76);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
@@ -108,7 +108,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(99, 90);
+            this.txtSenha.Location = new System.Drawing.Point(416, 69);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(127, 20);
@@ -125,16 +125,16 @@
             // datausuario
             // 
             this.datausuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datausuario.Location = new System.Drawing.Point(294, 23);
+            this.datausuario.Location = new System.Drawing.Point(13, 213);
             this.datausuario.Name = "datausuario";
-            this.datausuario.Size = new System.Drawing.Size(294, 186);
+            this.datausuario.Size = new System.Drawing.Size(367, 141);
             this.datausuario.TabIndex = 8;
             this.datausuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datausuario_CellClick);
             this.datausuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datausuario_CellContentClick);
             // 
             // btneditar
             // 
-            this.btneditar.Location = new System.Drawing.Point(190, 145);
+            this.btneditar.Location = new System.Drawing.Point(151, 145);
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(75, 36);
             this.btneditar.TabIndex = 9;
@@ -144,7 +144,7 @@
             // 
             // btnexcluir
             // 
-            this.btnexcluir.Location = new System.Drawing.Point(13, 202);
+            this.btnexcluir.Location = new System.Drawing.Point(315, 145);
             this.btnexcluir.Name = "btnexcluir";
             this.btnexcluir.Size = new System.Drawing.Size(75, 37);
             this.btnexcluir.TabIndex = 10;
@@ -155,7 +155,7 @@
             // 
             // btnListarusuario
             // 
-            this.btnListarusuario.Location = new System.Drawing.Point(100, 202);
+            this.btnListarusuario.Location = new System.Drawing.Point(462, 145);
             this.btnListarusuario.Name = "btnListarusuario";
             this.btnListarusuario.Size = new System.Drawing.Size(126, 37);
             this.btnListarusuario.TabIndex = 11;
@@ -166,7 +166,7 @@
             // cboPerfil
             // 
             this.cboPerfil.FormattingEnabled = true;
-            this.cboPerfil.Location = new System.Drawing.Point(99, 119);
+            this.cboPerfil.Location = new System.Drawing.Point(422, 23);
             this.cboPerfil.Name = "cboPerfil";
             this.cboPerfil.Size = new System.Drawing.Size(121, 21);
             this.cboPerfil.TabIndex = 12;
@@ -175,7 +175,7 @@
             // lblperfil
             // 
             this.lblperfil.AutoSize = true;
-            this.lblperfil.Location = new System.Drawing.Point(44, 119);
+            this.lblperfil.Location = new System.Drawing.Point(350, 23);
             this.lblperfil.Name = "lblperfil";
             this.lblperfil.Size = new System.Drawing.Size(30, 13);
             this.lblperfil.TabIndex = 13;

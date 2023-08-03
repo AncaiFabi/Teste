@@ -8,6 +8,7 @@ using Modelo;
 using System.Data;
 using Microsoft.Win32;
 using System.Linq.Expressions;
+using System.Management;
 
 namespace Controller
 {
@@ -81,29 +82,47 @@ namespace Controller
             sqlcon.Close();
             return resultado;
         }
-        public bool logar(UsuarioModelo us)
+
+        //metodo para carregar o usuario
+        public UsuarioModelo CarregaUsuario(int codigo)
         {
-            try
+            UsuarioModelo us = new UsuarioModelo();
+            MySqlConnection sqlcon = con.getConexao();
+            sqlcon.Open();
+            string sql = "SELECT * from usuario where id_pessoa=@id";
+            MySqlCommand cmd = new MySqlCommand(sql, sqlcon);
+            cmd.Parameters.AddWithValue("@id", codigo);//substitua o valor do codigo
+            MySqlDataReader registro = cmd.ExecuteReader();//leia os dados da consulta
+            if (registro.HasRows) //existe linha de registro
             {
-                bool resultado = false;
-                int registro;
-                string sql = "select * from usuarios where nome='@usuario' and senha='@senha'";
-                MySqlConnection sqlcon = con.getConexao();
-                sqlcon.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, sqlcon);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = sql;
-                cmd.Parameters.AddWithValue("@usuario", us.nome);
-                cmd.Parameters.AddWithValue("@Senha", us.senha);
-                registro = Convert.ToInt32(cmd.ExecuteScalar());
-                if (registro == 1)
-                    resultado = true;
-                return resultado;
+                registro.Read();//leia o registro
+                //gravando as informações no modelo usuario
+                us.nome = registro["nome"].ToString();
+                us.senha = registro["senha"].ToString();
+                us.idusuario = Convert.ToInt32(registro["id_pessoa"]);
+                us.idperfil = Convert.ToInt32(registro["id_perfil"]);
             }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            sqlcon.Close();
+            return us;
+        }
+        public int logar(UsuarioModelo us)
+        {
+
+
+            int registro = 0;
+            string sql = "select id_pessoa from usuario where nome=@usuario and senha=@senha";
+            MySqlConnection sqlcon = con.getConexao();
+            sqlcon.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, sqlcon);
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@usuario", us.nome);
+            cmd.Parameters.AddWithValue("@Senha", us.senha);
+            registro = Convert.ToInt32(cmd.ExecuteScalar());
+
+            return registro;
+
+
 
         }
     }

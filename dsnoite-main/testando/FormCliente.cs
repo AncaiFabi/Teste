@@ -126,5 +126,20 @@ namespace testando
             idperfil = Convert.ToInt32(((DataRowView)cboPerfil.SelectedItem)["id_perfil"]);
             MessageBox.Show("id= " + idperfil);
         }
+
+        private void FrmCliente_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSenha_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(txtSenha, "Insira a senha");
+        }
     }
 }

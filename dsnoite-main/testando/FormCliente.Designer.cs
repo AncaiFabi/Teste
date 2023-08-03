@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtnome = new System.Windows.Forms.TextBox();
@@ -42,6 +43,7 @@
             this.btnListarusuario = new System.Windows.Forms.Button();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.lblperfil = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.datausuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +107,7 @@
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Senha:";
+            this.label3.MouseHover += new System.EventHandler(this.label3_MouseHover);
             // 
             // txtSenha
             // 
@@ -113,6 +116,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(127, 20);
             this.txtSenha.TabIndex = 6;
+            this.txtSenha.MouseHover += new System.EventHandler(this.txtSenha_MouseHover);
             // 
             // txtId
             // 
@@ -210,6 +214,7 @@
             this.Name = "FrmCliente";
             this.Text = "testando";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
+            this.MouseHover += new System.EventHandler(this.FrmCliente_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.datausuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -232,6 +237,7 @@
         private System.Windows.Forms.Button btnListarusuario;
         private System.Windows.Forms.ComboBox cboPerfil;
         private System.Windows.Forms.Label lblperfil;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

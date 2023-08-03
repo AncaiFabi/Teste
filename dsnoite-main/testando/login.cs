@@ -14,6 +14,7 @@ namespace testando
 {
     public partial class FormLogin : Form
     {
+        int codigoUsuario;
         public FormLogin()
         {
             InitializeComponent();
@@ -25,23 +26,27 @@ namespace testando
             UsuarioController uscontrole= new UsuarioController();
             us.nome = txtNome.Text;
             us.senha = txtSenha.Text;
-            if(string.IsNullOrEmpty(us.nome))
+            codigoUsuario = uscontrole.logar(us);
+            if (string.IsNullOrEmpty(us.nome))
             {
                     MessageBox.Show("Nome Vazio");
-                    txtNome.Focus();
+                    lblNome.Focus();
             }
-            if (string.IsNullOrEmpty(us.senha))
+            else if (string.IsNullOrEmpty(us.senha))
             {
                 MessageBox.Show("Nome Vazio");
-                txtSenha.Focus();
+                lblSenha.Focus();
             }
-            if(uscontrole.logar(us) == true)
+            
+            else if(codigoUsuario >= 1)
             {
-                frmPrincipal principal= new frmPrincipal();
+                
+                frmPrincipal principal= new frmPrincipal(codigoUsuario);
                 principal.ShowDialog();
             }
             else
             {
+                MessageBox.Show("id=" + codigoUsuario);
                 MessageBox.Show("usuario ou senha invalidos");
             }
         }
